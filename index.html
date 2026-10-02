@@ -1,101 +1,579 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>WEZZA — Portfólio de Coleção</title><style>
-@page { size: A4 portrait; margin: 0; }
-* { box-sizing:border-box; }
-html,body { margin:0; padding:0; background:#222; }
-body { font-family: Arial, Helvetica, sans-serif; color:#0B132B; }
-.page { width:210mm; height:297mm; position:relative; page-break-after:always; padding:17mm 18mm 14mm; background:#F4F4F6; display:flex; flex-direction:column; }
-.page.dark { background:#0B132B; color:#F4F4F6; }
-.eyebrow { font-size:8.5px; letter-spacing:2.4px; color:#8A95A5; text-transform:uppercase; border-top:1px solid #0B132B; padding-top:4mm; width:100%; }
-.dark .eyebrow { border-color:#8A95A5; }
-.folio { margin-top:auto; display:flex; justify-content:space-between; font-size:7.5px; letter-spacing:1px; color:#8A95A5; text-transform:uppercase; }
-.cover { padding:22mm 19mm 17mm; justify-content:space-between; }
-.cover-mark { font-size:22px; letter-spacing:7px; font-weight:bold; }
-.cover-rule { width:48mm; height:1px; background:#8A95A5; margin-top:38mm; }
-.cover-title { font-family: Georgia, serif; font-size:47px; line-height:1.02; letter-spacing:-1.5px; margin-top:auto; }
-.cover-title em { font-style:normal; color:#8A95A5; font-size:38px; }
-.cover-sub { font-size:11px; line-height:1.6; letter-spacing:2px; text-transform:uppercase; color:#8A95A5; margin-top:8mm; }
-.cover-bottom { font-size:8px; letter-spacing:3px; color:#8A95A5; }
-.opening-grid { flex:1; display:grid; grid-template-columns:1.35fr .65fr; gap:16mm; align-items:center; }
-h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:normal; letter-spacing:-.7px; }
-.opening-copy { border-top:1px solid #8A95A5; padding-top:5mm; font-size:13px; line-height:1.6; }
-.opening-copy p + p { margin-top:7mm; color:#5D6878; }
-.manifesto { flex:1; display:flex; flex-direction:column; justify-content:center; padding:8mm 8mm 15mm; }
-.manifesto-word { font-family:Georgia,serif; font-size:47px; letter-spacing:1px; }
-.light-word { color:#8A95A5; margin-top:35mm; }
-.manifesto-line { width:37mm; height:1px; background:#0B132B; margin:7mm 0 3mm; }
-.manifesto-text { font-size:13px; color:#5D6878; letter-spacing:.4px; }
-.section-opener { flex:1; display:flex; flex-direction:column; justify-content:center; gap:7mm; }
-.section-no { font-family:Georgia,serif; font-size:112px; line-height:.8; color:#8A95A5; }
-.section-opener h2 { font-family:Georgia,serif; font-size:45px; font-weight:normal; letter-spacing:1px; margin:0; }
-.section-opener p { font-size:13px; color:#5D6878; margin-top:6mm; letter-spacing:.4px; }
-.hero-layout { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5mm 0 10mm; }
-.product-img { width:100%; height:53mm; object-fit:contain; display:block; }
-.hero-img { height:170mm; width:150mm; }
-.hero-caption { width:150mm; border-top:1px solid #8A95A5; margin-top:10mm; padding-top:4mm; display:grid; grid-template-columns:1fr 1fr; gap:2mm; }
-.hero-caption span,.hero-caption small { font-size:8px; letter-spacing:1.7px; color:#8A95A5; text-transform:uppercase; }
-.hero-caption strong { font-size:13px; letter-spacing:1px; text-align:right; }
-.hero-caption small { grid-column:1 / -1; margin-top:2mm; letter-spacing:.7px; }
-.grid-title { font-family:Georgia,serif; font-size:29px; line-height:1.04; margin:12mm 0 8mm; }
-.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8mm 6mm; align-items:start; margin-top:auto; margin-bottom:auto; }
-.product-card { border-top:1px solid #8A95A5; padding-top:3mm; }
-.product-card .product-img { height:70mm; }
-.product-meta { border-top:1px solid #D1D5DB; margin-top:3mm; padding-top:2.5mm; display:flex; flex-direction:column; gap:1.5mm; font-size:7px; line-height:1.25; letter-spacing:.7px; color:#5D6878; }
-.product-meta span:first-child { color:#0B132B; font-weight:bold; }
-.closing { flex:1; display:flex; flex-direction:column; justify-content:center; }
-.closing-mark { font-size:19px; letter-spacing:6px; color:#8A95A5; margin-bottom:38mm; }
-.closing h2 { font-family:Georgia,serif; font-size:39px; line-height:1.08; font-weight:normal; margin:0; }
-.closing-rule { width:42mm; height:1px; background:#8A95A5; margin:9mm 0 4mm; }
-.closing p { font-size:9px; text-transform:uppercase; letter-spacing:2px; color:#8A95A5; }
-@media screen { .page { margin:10mm auto; box-shadow:0 2px 16px rgba(0,0,0,.25); } }
-@media print { html,body { background:#fff; } .page { margin:0; box-shadow:none; } }
-</style></head><body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>WEZZA — Portfólio de Coleção</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #222;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0B132B;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  position: relative;
+  page-break-after: always;
+  padding: 17mm 18mm 14mm;
+  background: #F4F4F6;
+  display: flex;
+  flex-direction: column;
+}
+
+.page.dark {
+  background: #0B132B;
+  color: #F4F4F6;
+}
+
+.eyebrow {
+  font-size: 8.5px;
+  letter-spacing: 2.4px;
+  color: #8A95A5;
+  text-transform: uppercase;
+  border-top: 1px solid #0B132B;
+  padding-top: 4mm;
+  width: 100%;
+}
+
+.dark .eyebrow {
+  border-color: #8A95A5;
+}
+
+.folio {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5px;
+  letter-spacing: 1px;
+  color: #8A95A5;
+  text-transform: uppercase;
+}
+
+.cover {
+  padding: 22mm 19mm 17mm;
+  justify-content: space-between;
+}
+
+.cover-mark {
+  font-size: 22px;
+  letter-spacing: 7px;
+  font-weight: bold;
+}
+
+.cover-rule {
+  width: 48mm;
+  height: 1px;
+  background: #8A95A5;
+  margin-top: 38mm;
+}
+
+.cover-title {
+  font-family: Georgia, serif;
+  font-size: 47px;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+  margin-top: auto;
+}
+
+.cover-title em {
+  font-style: normal;
+  color: #8A95A5;
+  font-size: 38px;
+}
+
+.cover-sub {
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8A95A5;
+  margin-top: 8mm;
+}
+
+.cover-bottom {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #8A95A5;
+}
+
+.opening-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 16mm;
+  align-items: center;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  line-height: 1.14;
+  font-weight: normal;
+  letter-spacing: -.7px;
+}
+
+.opening-copy {
+  border-top: 1px solid #8A95A5;
+  padding-top: 5mm;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.opening-copy p + p {
+  margin-top: 7mm;
+  color: #5D6878;
+}
+
+.manifesto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8mm 8mm 15mm;
+}
+
+.manifesto-word {
+  font-family: Georgia, serif;
+  font-size: 47px;
+  letter-spacing: 1px;
+}
+
+.light-word {
+  color: #8A95A5;
+  margin-top: 35mm;
+}
+
+.manifesto-line {
+  width: 37mm;
+  height: 1px;
+  background: #0B132B;
+  margin: 7mm 0 3mm;
+}
+
+.manifesto-text {
+  font-size: 13px;
+  color: #5D6878;
+  letter-spacing: .4px;
+}
+
+.section-opener {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7mm;
+}
+
+.section-no {
+  font-family: Georgia, serif;
+  font-size: 112px;
+  line-height: .8;
+  color: #8A95A5;
+}
+
+.section-opener h2 {
+  font-family: Georgia, serif;
+  font-size: 45px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.section-opener p {
+  font-size: 13px;
+  color: #5D6878;
+  margin-top: 6mm;
+  letter-spacing: .4px;
+}
+
+.hero-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5mm 0 10mm;
+}
+
+.product-img {
+  width: 100%;
+  height: 53mm;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-img {
+  height: 170mm;
+  width: 150mm;
+}
+
+.hero-caption {
+  width: 150mm;
+  border-top: 1px solid #8A95A5;
+  margin-top: 10mm;
+  padding-top: 4mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+}
+
+.hero-caption span,
+.hero-caption small {
+  font-size: 8px;
+  letter-spacing: 1.7px;
+  color: #8A95A5;
+  text-transform: uppercase;
+}
+
+.hero-caption strong {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+.hero-caption small {
+  grid-column: 1 / -1;
+  margin-top: 2mm;
+  letter-spacing: .7px;
+}
+
+.hero-product-name {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #0B132B;
+  font-weight: bold;
+  margin-top: 2mm;
+}
+
+.hero-product-price {
+  grid-column: 1 / -1;
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #5D6878;
+}
+
+.grid-title {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  line-height: 1.04;
+  margin: 12mm 0 8mm;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm 6mm;
+  align-items: start;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.product-card {
+  border-top: 1px solid #8A95A5;
+  padding-top: 3mm;
+}
+
+.product-card .product-img {
+  height: 70mm;
+}
+
+.product-meta {
+  border-top: 1px solid #D1D5DB;
+  margin-top: 3mm;
+  padding-top: 2.5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+  font-size: 7px;
+  line-height: 1.25;
+  letter-spacing: .7px;
+  color: #5D6878;
+}
+
+.product-meta span:first-child {
+  color: #0B132B;
+  font-weight: bold;
+}
+
+.closing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.closing-mark {
+  font-size: 19px;
+  letter-spacing: 6px;
+  color: #8A95A5;
+  margin-bottom: 38mm;
+}
+
+.closing h2 {
+  font-family: Georgia, serif;
+  font-size: 39px;
+  line-height: 1.08;
+  font-weight: normal;
+  margin: 0;
+}
+
+.closing-rule {
+  width: 42mm;
+  height: 1px;
+  background: #8A95A5;
+  margin: 9mm 0 4mm;
+}
+
+.closing p {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #8A95A5;
+}
+
+@media screen {
+  .page {
+    margin: 10mm auto;
+    box-shadow: 0 2px 16px rgba(0,0,0,.25);
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     CAPA
+========================================================= -->
 
 <section class="page dark cover">
-  <div class="cover-mark">WEZZA</div><div class="cover-rule">
-  </div><div class="cover-title">PRESENÇA<br><em>×</em> ESSÊNCIA</div>
-  <div class="cover-sub">Portfólio de coleção<br>Prata 925 · Design autoral</div>
-  <div class="cover-bottom">LUXO SILENCIOSO</div>
-</section>
 
-<section class="page light">
-  <div class="eyebrow">WEZZA / 00</div><div class="opening-grid"><div>
-    <h1>Uma joia não ocupa apenas o corpo.<br>Ela define o espaço ao redor.</h1></div>
-    <div class="opening-copy"><p>Formas precisas. Superfícies polidas. Presença sem excesso.</p>
-      <p>Este portfólio reúne uma seleção de prata 925 organizada por ritmo, matéria e intenção.</p></div>
-  </div><div class="folio"><span>WEZZA / PORTFÓLIO DE COLEÇÃO</span><span>02</span></div>
-</section>
+  <div class="cover-mark">WEZZA</div>
 
-<section class="page light"><div class="eyebrow">MANIFESTO</div>
-  <div class="manifesto"><div class="manifesto-word">PRESENÇA</div>
-    <div class="manifesto-line"></div><div class="manifesto-text">O que se revela no primeiro olhar.</div>
-    <div class="manifesto-word light-word">ESSÊNCIA</div><div class="manifesto-line"></div>
-    <div class="manifesto-text">O que permanece depois dele.</div>
-  </div><div class="folio"><span>WEZZA / PORTFÓLIO DE COLEÇÃO</span><span>03</span></div>
-</section>
-  
-<section class="page light"><div class="eyebrow">01 / ABERTURA</div>
-  <div class="section-opener"><div class="section-no">01</div>
-    <div><h2>BRINCOS</h2><p>Geometria em escala íntima.</p></div>
-  </div><div class="folio"><span>WEZZA / PORTFÓLIO DE COLEÇÃO</span><span>04</span></div>
-</section>
-  
-<section class="page light"><div class="eyebrow">01 / BRINCOS / PEÇA DE ASSINATURA</div>
-  <div class="hero-layout"><img class="product-img hero-img" src="assets/brincos/brincos_27.png" alt="brincos_27.png">
-    <div class="hero-caption">
-      <span>PEÇA DE ASSINATURA</span>
-      <strong>BRINCOS CUSHION CRAVEJADO</strong>
-      <small>PRATA 925 · R$ 174,00</small>
-    </div>
+  <div class="cover-rule"></div>
+
+  <div class="cover-title">
+    PRESENÇA<br>
+    <em>×</em> ESSÊNCIA
   </div>
-  <div class="folio"><span>WEZZA / PORTFÓLIO DE COLEÇÃO</span><span>05</span></div>
+
+  <div class="cover-sub">
+    Portfólio de coleção<br>
+    Prata 925 · Design autoral
+  </div>
+
+  <div class="cover-bottom">
+    LUXO SILENCIOSO
+  </div>
+
 </section>
-  
+
+
+<!-- =========================================================
+     ABERTURA
+========================================================= -->
+
 <section class="page light">
+
+  <div class="eyebrow">WEZZA / 00</div>
+
+  <div class="opening-grid">
+
+    <div>
+      <h1>
+        Uma joia não ocupa apenas o corpo.<br>
+        Ela define o espaço ao redor.
+      </h1>
+    </div>
+
+    <div class="opening-copy">
+
+      <p>
+        Formas precisas. Superfícies polidas. Presença sem excesso.
+      </p>
+
+      <p>
+        Este portfólio reúne uma seleção de prata 925 organizada por ritmo,
+        matéria e intenção.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="folio">
+    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
+    <span>02</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     MANIFESTO
+========================================================= -->
+
+<section class="page light">
+
+  <div class="eyebrow">MANIFESTO</div>
+
+  <div class="manifesto">
+
+    <div class="manifesto-word">
+      PRESENÇA
+    </div>
+
+    <div class="manifesto-line"></div>
+
+    <div class="manifesto-text">
+      O que se revela no primeiro olhar.
+    </div>
+
+    <div class="manifesto-word light-word">
+      ESSÊNCIA
+    </div>
+
+    <div class="manifesto-line"></div>
+
+    <div class="manifesto-text">
+      O que permanece depois dele.
+    </div>
+
+  </div>
+
+  <div class="folio">
+    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
+    <span>03</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRINCOS — ABERTURA
+========================================================= -->
+
+<section class="page light">
+
+  <div class="eyebrow">01 / ABERTURA</div>
+
+  <div class="section-opener">
+
+    <div class="section-no">01</div>
+
+    <div>
+      <h2>BRINCOS</h2>
+      <p>Geometria em escala íntima.</p>
+    </div>
+
+  </div>
+
+  <div class="folio">
+    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
+    <span>04</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRINCOS — PEÇA DE ASSINATURA
+========================================================= -->
+
+<section class="page light">
+
+  <div class="eyebrow">
+    01 / BRINCOS / PEÇA DE ASSINATURA
+  </div>
+
+  <div class="hero-layout">
+
+    <img
+      class="product-img hero-img"
+      src="assets/brincos/brincos_27.png"
+      alt="brincos_27.png"
+    >
+
+    <div class="hero-caption">
+
+      <span>PEÇA DE ASSINATURA</span>
+
+      <strong>BRINCOS / 01</strong>
+
+      <div class="hero-product-name">
+        BRINCOS CUSHION CRAVEJADO
+      </div>
+
+      <div class="hero-product-price">
+        PRATA 925 · R$ 174,00
+      </div>
+
+      <small>
+        Escala, contorno e acabamento em primeiro plano.
+      </small>
+
+    </div>
+
+  </div>
+
+  <div class="folio">
+    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
+    <span>05</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRINCOS 01–03
+========================================================= -->
+
+<section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_01.png" alt="brincos_01.png">
+      <img class="product-img" src="assets/brincos/brincos_01.png" alt="brincos_01.png">
       <div class="product-meta">
         <span>BRINCOS CORAÇÃO CRAVEJADO FUSION VERDE</span>
         <span>PRATA 925 · R$ 130,00</span>
@@ -103,7 +581,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_02.png" alt="brincos_02.png">
+      <img class="product-img" src="assets/brincos/brincos_02.png" alt="brincos_02.png">
       <div class="product-meta">
         <span>BRINCOS CLUSTER CRAVEJADO REDONDO VERDE ESMERALDA</span>
         <span>PRATA 925 · R$ 122,00</span>
@@ -111,25 +589,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_03.png" alt="brincos_03.png">
+      <img class="product-img" src="assets/brincos/brincos_03.png" alt="brincos_03.png">
       <div class="product-meta">
         <span>BRINCOS TREVO GUILHOCHÊ CRAVEJADOS COM ZIRCÔNIAS EM HALO</span>
         <span>PRATA 925 · R$ 165,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>06</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 04–06
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_04.png" alt="brincos_04.png">
+      <img class="product-img" src="assets/brincos/brincos_04.png" alt="brincos_04.png">
       <div class="product-meta">
         <span>BRINCOS EAR CUFF GEOMÉTRICO EM ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 85,00</span>
@@ -137,7 +630,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_05.png" alt="brincos_05.png">
+      <img class="product-img" src="assets/brincos/brincos_05.png" alt="brincos_05.png">
       <div class="product-meta">
         <span>BRINCOS QUADRADO CLASSIC ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 169,00</span>
@@ -145,25 +638,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_06.png" alt="brincos_06.png">
+      <img class="product-img" src="assets/brincos/brincos_06.png" alt="brincos_06.png">
       <div class="product-meta">
         <span>BRINCOS EAR CUFF RAMO DE ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 140,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>07</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 07–09
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_07.png" alt="brincos_07.png">
+      <img class="product-img" src="assets/brincos/brincos_07.png" alt="brincos_07.png">
       <div class="product-meta">
         <span>BRINCOS TREVO CRAVEJADOS COM HALO DE ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 118,00</span>
@@ -171,7 +679,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_08.png" alt="brincos_08.png">
+      <img class="product-img" src="assets/brincos/brincos_08.png" alt="brincos_08.png">
       <div class="product-meta">
         <span>BRINCOS TREVO CORAÇÃO MADREPÉROLA</span>
         <span>PRATA 925 · R$ 92,00</span>
@@ -179,25 +687,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_09.png" alt="brincos_09.png">
+      <img class="product-img" src="assets/brincos/brincos_09.png" alt="brincos_09.png">
       <div class="product-meta">
         <span>BRINCOS FLOR BLOSSOM COM ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 149,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>08</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 10–12
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_10.png" alt="brincos_10.png">
+      <img class="product-img" src="assets/brincos/brincos_10.png" alt="brincos_10.png">
       <div class="product-meta">
         <span>BRINCOS ESTRELA DO MAR</span>
         <span>PRATA 925 · R$ 100,00</span>
@@ -205,33 +728,48 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_11.png" alt="brincos_11.png">
+      <img class="product-img" src="assets/brincos/brincos_11.png" alt="brincos_11.png">
       <div class="product-meta">
-        <span>BRINCOS CORAÇÃO CRAVEJADO FUSION AZUL NOITE</span>
+        <span>BRINCOS BRINCOS CORAÇÃO CRAVEJADO FUSION AZUL NOITE</span>
         <span>PRATA 925 · R$ 130,00</span>
       </div>
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_12.png" alt="brincos_12.png">
+      <img class="product-img" src="assets/brincos/brincos_12.png" alt="brincos_12.png">
       <div class="product-meta">
         <span>BRINCOS MAXI ASA EM MADREPÉROLA NEGRA FURTA-COR</span>
         <span>PRATA 925 · R$ 344,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>09</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 13–15
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_13.png" alt="brincos_13.png">
+      <img class="product-img" src="assets/brincos/brincos_13.png" alt="brincos_13.png">
       <div class="product-meta">
         <span>BRINCOS PATAS FURTA-COR</span>
         <span>PRATA 925 · R$ 100,00</span>
@@ -239,7 +777,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_14.png" alt="brincos_14.png">
+      <img class="product-img" src="assets/brincos/brincos_14.png" alt="brincos_14.png">
       <div class="product-meta">
         <span>BRINCOS BORBOLETA CHARM COM PÉROLA E ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 130,00</span>
@@ -247,25 +785,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_15.png" alt="brincos_15.png">
+      <img class="product-img" src="assets/brincos/brincos_15.png" alt="brincos_15.png">
       <div class="product-meta">
         <span>BRINCOS CLUSTER REDONDO VERDE COM HALO CRAVEJADO</span>
         <span>PRATA 925 · R$ 119,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>10</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 16–18
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_16.png" alt="brincos_16.png">
+      <img class="product-img" src="assets/brincos/brincos_16.png" alt="brincos_16.png">
       <div class="product-meta">
         <span>BRINCOS EAR CUFF DUO DE GOTAS EM ZIRCÔNIA</span>
         <span>PRATA 925 · R$ 160,00</span>
@@ -273,7 +826,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_17.png" alt="brincos_17.png">
+      <img class="product-img" src="assets/brincos/brincos_17.png" alt="brincos_17.png">
       <div class="product-meta">
         <span>BRINCOS INFINITO</span>
         <span>PRATA 925 · R$ 89,00</span>
@@ -281,25 +834,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_18.png" alt="brincos_18.png">
+      <img class="product-img" src="assets/brincos/brincos_18.png" alt="brincos_18.png">
       <div class="product-meta">
         <span>BRINCOS GOTA BOMBÊ COM ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 165,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>11</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 19–21
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_19.png" alt="brincos_19.png">
+      <img class="product-img" src="assets/brincos/brincos_19.png" alt="brincos_19.png">
       <div class="product-meta">
         <span>BRINCOS SUBSTITUIR</span>
         <span>PRATA 925 · R$ 0,00</span>
@@ -307,7 +875,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_20.png" alt="brincos_20.png">
+      <img class="product-img" src="assets/brincos/brincos_20.png" alt="brincos_20.png">
       <div class="product-meta">
         <span>BRINCOS PONTO DE LUZ GOTA ROXA AMETISTA</span>
         <span>PRATA 925 · R$ 80,00</span>
@@ -315,25 +883,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_21.png" alt="brincos_21.png">
+      <img class="product-img" src="assets/brincos/brincos_21.png" alt="brincos_21.png">
       <div class="product-meta">
         <span>BRINCOS BALI REDONDO VERDE PERIDOTO EM PRATA ENVELHECIDA</span>
         <span>PRATA 925 · R$ 63,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>12</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 22–24
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_22.png" alt="brincos_22.png">
+      <img class="product-img" src="assets/brincos/brincos_22.png" alt="brincos_22.png">
       <div class="product-meta">
         <span>BRINCOS PÉTALAS EM ZIRCÓNIAS ROSAS</span>
         <span>PRATA 925 · R$ 74,00</span>
@@ -341,7 +924,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_23.png" alt="brincos_23.png">
+      <img class="product-img" src="assets/brincos/brincos_23.png" alt="brincos_23.png">
       <div class="product-meta">
         <span>BRINCOS DUO CÍRCULO LISO E CRAVEJADO COM ARGOLA</span>
         <span>PRATA 925 · R$ 68,00</span>
@@ -349,33 +932,48 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_24.png" alt="brincos_24.png">
+      <img class="product-img" src="assets/brincos/brincos_24.png" alt="brincos_24.png">
       <div class="product-meta">
         <span>BRINCOS PONTO DE LUZ CRAVEJADA COM HALO DE ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 135,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>13</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 25, 26, 28
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_25.png" alt="brincos_25.png">
+      <img class="product-img" src="assets/brincos/brincos_25.png" alt="brincos_25.png">
       <div class="product-meta">
-        <span>BRINCOS  TREVO MADREPÉROLA COM HALO DE ZIRCÔNIAS</span>
+        <span>BRINCOS TREVO MADREPÉROLA COM HALO DE ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 223,00</span>
       </div>
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_26.png" alt="brincos_26.png">
+      <img class="product-img" src="assets/brincos/brincos_26.png" alt="brincos_26.png">
       <div class="product-meta">
         <span>BRINCOS BOTÃO DUPLO PONTO DE LUZ E ELO</span>
         <span>PRATA 925 · R$ 87,00</span>
@@ -383,25 +981,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_28.png" alt="brincos_28.png">
+      <img class="product-img" src="assets/brincos/brincos_28.png" alt="brincos_28.png">
       <div class="product-meta">
         <span>BRINCOS CORAÇÃO CRAVEJADO EM ZIRCÔNIAS ROSAS COM HALO DE ZIRCÔNIAS BRANCAS</span>
         <span>PRATA 925 · R$ 110,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>14</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 29–31
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_29.png" alt="brincos_29.png">
+      <img class="product-img" src="assets/brincos/brincos_29.png" alt="brincos_29.png">
       <div class="product-meta">
         <span>BRINCOS OLHO GREGO SHINE</span>
         <span>PRATA 925 · R$ 94,00</span>
@@ -409,7 +1022,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_30.png" alt="brincos_30.png">
+      <img class="product-img" src="assets/brincos/brincos_30.png" alt="brincos_30.png">
       <div class="product-meta">
         <span>BRINCOS MINI FLOR CRAVEJADA DE ZIRCÓNIA</span>
         <span>PRATA 925 · R$ 90,00</span>
@@ -417,25 +1030,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_31.png" alt="brincos_31.png">
+      <img class="product-img" src="assets/brincos/brincos_31.png" alt="brincos_31.png">
       <div class="product-meta">
         <span>BRINCOS REDONDO MADREPÉROLA COM HALO DE ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 125,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>15</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 32–34
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_32.png" alt="brincos_32.png">
+      <img class="product-img" src="assets/brincos/brincos_32.png" alt="brincos_32.png">
       <div class="product-meta">
         <span>BRINCOS FLOR CINCO PÉTALAS CRAVEJADA</span>
         <span>PRATA 925 · R$ 92,00</span>
@@ -443,7 +1071,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_33.png" alt="brincos_33.png">
+      <img class="product-img" src="assets/brincos/brincos_33.png" alt="brincos_33.png">
       <div class="product-meta">
         <span>BRINCOS CLUSTER NAVETE EM ZIRCÔNIA</span>
         <span>PRATA 925 · R$ 100,00</span>
@@ -451,25 +1079,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_34.png" alt="brincos_34.png">
+      <img class="product-img" src="assets/brincos/brincos_34.png" alt="brincos_34.png">
       <div class="product-meta">
         <span>BRINCOS BALI PÉROLA COM BORDA TRABALHADA EM PRATA ENVELHECIDA</span>
         <span>PRATA 925 · R$ 150,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>16</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     BRINCOS 35–36
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">01 / BRINCOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_35.png" alt="brincos_35.png">
+      <img class="product-img" src="assets/brincos/brincos_35.png" alt="brincos_35.png">
       <div class="product-meta">
         <span>BRINCOS BOTÃO TEXTURIZADO</span>
         <span>PRATA 925 · R$ 137,00</span>
@@ -477,56 +1120,115 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/brincos/brincos_36.png" alt="brincos_36.png">
+      <img class="product-img" src="assets/brincos/brincos_36.png" alt="brincos_36.png">
       <div class="product-meta">
         <span>BRINCOS ARO BRILHANTE E PONTO DE LUZ</span>
         <span>PRATA 925 · R$ 139,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>17</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     COLARES — ABERTURA
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">02 / ABERTURA</div>
+
   <div class="section-opener">
+
     <div class="section-no">02</div>
+
     <div>
       <h2>COLARES</h2>
       <p>Linhas que constroem presença.</p>
     </div>
+
   </div>
+
+  <div class="folio">
+    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
+    <span>18</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     COLARES — PEÇA DE ASSINATURA
+========================================================= -->
+
+<section class="page light">
+
+  <div class="eyebrow">
+    02 / COLARES / PEÇA DE ASSINATURA
+  </div>
+
+  <div class="hero-layout">
+
+    <img
+      class="product-img hero-img"
+      src="assets/colares/colares_16.png"
+      alt="colares_16.png"
+    >
+
+    <div class="hero-caption">
+
+      <span>PEÇA DE ASSINATURA</span>
+
+      <strong>COLARES / 01</strong>
+
+      <div class="hero-product-name">
+        COLAR BORBOLETA VERDE EM ELO PORTUGUÊS
+      </div>
+
+      <div class="hero-product-price">
+        PRATA 925 · R$ 130,00
+      </div>
+
+      <small>
+        Escala, contorno e acabamento em primeiro plano.
+      </small>
+
+    </div>
+
+  </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
     <span>19</span>
   </div>
+
 </section>
 
-<section class="page light">
-  <div class="eyebrow">02 / COLARES / PEÇA DE ASSINATURA</div>
-  <div class="hero-layout">
-    <img class="product-img hero-img" src="assets/colares/colares_16.png" alt="colares_16.png">
-    <div class="hero-caption">
-      <span>PEÇA DE ASSINATURA</span>
-      <strong>COLAR BORBOLETA VERDE EM ELO PORTUGUÊS</strong>
-      <small>PRATA 925 · R$ 130,00</small>
-    </div>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>20</span>
-  </div>
-</section>
+
+<!-- =========================================================
+     COLARES 01–03
+========================================================= -->
 
 <section class="page light">
+
   <div class="eyebrow">02 / COLARES</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_01.png" alt="colares_01.png">
+      <img class="product-img" src="assets/colares/colares_01.png" alt="colares_01.png">
       <div class="product-meta">
         <span>COLAR GOTA MADREPÉROLA EM CORRENTE VENEZIANA</span>
         <span>PRATA 925 · R$ 145,00</span>
@@ -534,7 +1236,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_02.png" alt="colares_02.png">
+      <img class="product-img" src="assets/colares/colares_02.png" alt="colares_02.png">
       <div class="product-meta">
         <span>COLAR GRAVATINHA CORDÃO VENEZIANO E ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 246,00</span>
@@ -542,25 +1244,40 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_03.png" alt="colares_03.png">
+      <img class="product-img" src="assets/colares/colares_03.png" alt="colares_03.png">
       <div class="product-meta">
-        <span>COLAR GOTA BOMBÊ </span>
+        <span>COLAR GOTA BOMBÊ</span>
         <span>PRATA 925 · R$ 160,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>21</span>
+    <span>20</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     COLARES 04–06
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">02 / COLARES</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_04.png" alt="colares_04.png">
+      <img class="product-img" src="assets/colares/colares_04.png" alt="colares_04.png">
       <div class="product-meta">
         <span>COLAR PONTO DE LUZ VERDE TURMALINA</span>
         <span>PRATA 925 · R$ 200,00</span>
@@ -568,37 +1285,52 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_05.png" alt="colares_05.png">
+      <img class="product-img" src="assets/colares/colares_05.png" alt="colares_05.png">
       <div class="product-meta">
         <span>COLAR VENEZIANO · R$ 84,00</span>
-        <span>PINGENTE OLHO GREGO HALO ZIRCÔNIA· R$ 105,00</span>
+        <span>PINGENTE OLHO GREGO HALO ZIRCÔNIA · R$ 105,00</span>
         <span>COLAR VENEZIANO DE BOLINHAS · R$ 87,00</span>
-        <span>PINGENTE MÃO DE FÁTIMA/ HAMSA HALO ZIRCÔNIA · R$ 126,00</span>
+        <span>PINGENTE MÃO DE FÁTIMA / HAMSA HALO ZIRCÔNIA · R$ 126,00</span>
         <span>PRATA 925</span>
       </div>
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_06.png" alt="colares_06.png">
+      <img class="product-img" src="assets/colares/colares_06.png" alt="colares_06.png">
       <div class="product-meta">
         <span>COLAR CORAÇÕES · R$ 105,00</span>
         <span>COLAR COIN TEXTURIZADA BOMBÊ · R$ 156,00</span>
         <span>PRATA 925</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>22</span>
+    <span>21</span>
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     COLARES 07–09
+========================================================= -->
+
 <section class="page light">
+
   <div class="eyebrow">02 / COLARES</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
+
+  <div class="grid-title">
+    FORMA, SUPERFÍCIE,<br>
+    INTERVALO.
+  </div>
+
   <div class="product-grid">
+
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_07.png" alt="colares_07.png">
+      <img class="product-img" src="assets/colares/colares_07.png" alt="colares_07.png">
       <div class="product-meta">
         <span>COLAR DUPLO MEDALHA ESPÍRITO SANTO E CRUCIFIXO HALO CRAVEJADO</span>
         <span>PRATA 925 · R$ 255,00</span>
@@ -606,7 +1338,7 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_08.png" alt="colares_08.png">
+      <img class="product-img" src="assets/colares/colares_08.png" alt="colares_08.png">
       <div class="product-meta">
         <span>COLAR ROSÁRIO PÉROLAS SINTÉTICAS</span>
         <span>PRATA 925 · R$ 218,00</span>
@@ -614,363 +1346,15 @@ h1 { font-family:Georgia,serif; font-size:35px; line-height:1.14; font-weight:no
     </article>
 
     <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_09.png" alt="colares_09.png">
+      <img class="product-img" src="assets/colares/colares_09.png" alt="colares_09.png">
       <div class="product-meta">
         <span>COLAR MINIMAL PÉROLA COM HALO DE ZIRCÔNIAS</span>
         <span>PRATA 925 · R$ 258,00</span>
       </div>
     </article>
+
   </div>
+
   <div class="folio">
     <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>23</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">02 / COLARES</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_10.png" alt="colares_10.png">
-      <div class="product-meta">
-        <span>COLAR OLHO GREGO, PROTEÇÃO</span>
-        <span>PRATA 925 · R$ 172,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_11.png" alt="colares_11.png">
-      <div class="product-meta">
-        <span>COLAR ZIRCÔNIA DUPLA</span>
-        <span>PRATA 925 · R$ 170,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_12.png" alt="colares_12.png">
-      <div class="product-meta">
-        <span>COLAR FLOR QUATRO PÉTALAS EM ZIRCÔNIA</span>
-        <span>PRATA 925 · R$ 387,00</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>24</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">02 / COLARES</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_13.png" alt="colares_13.png">
-      <div class="product-meta">
-        <span>COLAR ELEGANCE FLORES EM MADREPÉROLA E ZIRCÔNIA</span>
-        <span>PRATA 925 · R$ 870,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_14.png" alt="colares_14.png">
-      <div class="product-meta">
-        <span>COLAR TREVO BLACK ESTILO ÔNIX</span>
-        <span>PRATA 925 · R$ 348,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_15.png" alt="colares_15.png">
-      <div class="product-meta">
-        <span>COLAR CORAÇÃO COM LINHAS CRAVEJADAS</span>
-        <span>PRATA 925 · R$ 190,00</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>25</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">02 / COLARES</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_17.png" alt="colares_17.png">
-      <div class="product-meta">
-        <span>COLAR HARMONIA ESFERAS</span>
-        <span>PRATA 925 · R$ 164,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_18.png" alt="colares_18.png">
-      <div class="product-meta">
-        <span>COLAR GOTA CRISTAL VIOLETA</span>
-        <span>PRATA 925 · R$ 138,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_19.png" alt="colares_19.png">
-      <div class="product-meta">
-        <span>COLAR PUREZA GRAVATINHA EM ZIRCÔNIA ROSA</span>
-        <span>PRATA 925 · R$ 204,00</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>26</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">02 / COLARES</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/colares/colares_20.png" alt="colares_20.png">
-      <div class="product-meta">
-        <span>COLAR LACRAIA · R$ 410,00</span>
-        <span>COLAR ZIRCÔNIAS RETANGULARES  · R$ 330,00</span>
-        <span>PRATA 925</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>27</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">03 / ABERTURA</div>
-  <div class="section-opener">
-    <div class="section-no">03</div>
-    <div>
-      <h2>CONJUNTOS</h2>
-      <p>A forma quando encontra continuidade.</p>
-    </div>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>28</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">03 / CONJUNTOS / PEÇA DE ASSINATURA</div>
-  <div class="hero-layout">
-    <img class="product-img hero-img" src="assets/conjuntos/conjuntos_07.png" alt="conjuntos_07.png">
-    <div class="hero-caption">
-      <span>PEÇA DE ASSINATURA</span>
-      <strong style="font-size: 10px; line-height: 1.4;">COLAR RABO DE RATO · R$ 144,00<br>COLAR MANDALA BAGUETADA COM HALO DE ZIRCÔNIAS· R$ 258,00</strong>
-      <small>PRATA 925</small>
-    </div>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>29</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">03 / CONJUNTOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_01.png" alt="conjuntos_01.png">
-      <div class="product-meta">
-        <span>CONJUNTO CACTO DE ZIRCÔNIAS</span>
-        <span>PRATA 925 · R$ 220,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_02.png" alt="conjuntos_02.png">
-      <div class="product-meta">
-        <span>CONJUNTO PONTO DE LUZ GOTA VERDE TURMALINA</span>
-        <span>PRATA 925 · R$ 153,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_03.png" alt="conjuntos_03.png">
-      <div class="product-meta">
-        <span>CONJUNTO TREVO ALHAMBRA MADREPÉROLA</span>
-        <span>PRATA 925 · R$ 438,00</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>30</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">03 / CONJUNTOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_04.png" alt="conjuntos_04.png">
-      <div class="product-meta">
-        <span>CONJUNTO CLAREZA PONTO DE LUZ CIRCULAR EM ZIRCÔNIA</span>
-        <span>PRATA 925 · R$ 225,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_05.png" alt="conjuntos_05.png">
-      <div class="product-meta">
-        <span>CONJUNTO HARMONIA PONTO DE LUZ CIRCULAR EM ZIRCÔNIA</span>
-        <span>PRATA 925 · R$ 218,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_06.png" alt="conjuntos_06.png">
-      <div class="product-meta">
-        <span>CONJUNTO ORBE CRAVEJADO</span>
-        <span>PRATA 925 · R$ 245,00</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>31</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">03 / CONJUNTOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_08.png" alt="conjuntos_08.png">
-      <div class="product-meta">
-        <span>CONJUNTO CORAÇÕES DUPLO SHINE</span>
-        <span>PRATA 925 · R$ 177,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_09.png" alt="conjuntos_09.png">
-      <div class="product-meta">
-        <span>CONJUNTO SILHUETA CORAÇÃO ZIRCÔNIAS</span>
-        <span>PRATA 925 · R$ 340,00</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_10.png" alt="conjuntos_10.png">
-      <div class="product-meta">
-        <span>CONJUNTO TULIPA GARDEN EM ZIRCÔNIAS</span>
-        <span>PRATA 925 · R$ 175,00</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>32</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">03 / CONJUNTOS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/conjuntos/conjuntos_11.png" alt="conjuntos_11.png">
-      <div class="product-meta">
-        <span>CONJUNTO TRIÂNGULO BOMBÊ</span>
-        <span>PRATA 925 · R$ 208,00</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>33</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">04 / ABERTURA</div>
-  <div class="section-opener">
-    <div class="section-no">04</div>
-    <div>
-      <h2>PULSEIRAS</h2>
-      <p>Matéria em movimento sobre a pele.</p>
-    </div>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>34</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">04 / PULSEIRAS / PEÇA DE ASSINATURA</div>
-  <div class="hero-layout">
-    <img class="product-img hero-img" src="assets/pulseiras/pulseiras_01.png" alt="pulseiras_01.png">
-    <div class="hero-caption">
-      <span>PEÇA DE ASSINATURA</span>
-      <strong style="font-size: 10px; line-height: 1.4;">PULSEIRA TREVO DE ZIRCÔNIAS COLORIDAS · R$ 280,00<br>PULSEIRA LAMINADA· R$ 286,00</strong>
-      <small>PRATA 925</small>
-    </div>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>35</span>
-  </div>
-</section>
-
-<section class="page light">
-  <div class="eyebrow">04 / PULSEIRAS</div>
-  <div class="grid-title">FORMA, SUPERFÍCIE,<br>INTERVALO.</div>
-  <div class="product-grid">
-    <article class="product-card">
-      <img class="product-img " src="assets/pulseiras/pulseiras_02.png" alt="pulseiras_02.png">
-      <div class="product-meta">
-        <span>PULSEIRA TRANÇA TRIPLA · R$ 150,00</span>
-        <span>PULSEIRA RIVIERA SOLAR · R$ 320,00</span>
-        <span>PRATA 925</span>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img class="product-img " src="assets/pulseiras/pulseiras_03.png" alt="pulseiras_03.png">
-      <div class="product-meta">
-        <span>PULSEIRA ELOS E ESFERAS · R$ 70,00</span>
-        <span>PULSEIRA GOTAS ZIRCÔNIAS · R$ 116,00</span>
-        <span>PULSEIRA SAGRADO CORAÇÃO DE JESUS · R$ 81,00</span>
-        <span>PRATA 925</span>
-      </div>
-    </article>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>36</span>
-  </div>
-</section>
-
-<section class="page dark">
-  <div class="eyebrow">ENCERRAMENTO</div>
-  <div class="closing">
-    <div class="closing-mark">WEZZA</div>
-    <h2>O luxo está no que<br>não precisa ser explicado.</h2>
-    <div class="closing-rule"></div>
-    <p>Prata 925 · Design autoral · Luxo silencioso</p>
-  </div>
-  <div class="folio">
-    <span>WEZZA / PORTFÓLIO DE COLEÇÃO</span>
-    <span>37</span>
-  </div>
-</section>
-</body>
-</html>
+    <span>22</span
